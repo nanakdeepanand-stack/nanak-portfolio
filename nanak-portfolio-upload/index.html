@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nanak Anand · Press any floor</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nanak Anand · Press any floor">
+<meta property="og:description" content="Portfolio of Nanak Anand, designer. I make complex things feel human, and I'm honest about how I make them.">
+<meta property="og:image" content="https://nanakdeepanand-stack.github.io/nanak-portfolio/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fluffy monsters leaving a golden lift towards an exit sign">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Portfolio of Nanak Anand, designer. I make complex things feel human, and I'm honest about how I make them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;500&family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141414; --cobalt:#0047FF; --pink:#FF7BAC; --amber:#FCB040;
+  --white:#FFFFFF; --warm:#FAF8F4; --muted:#6B6B6B; --line:#E6E3DD; --band:#094BEA;
+  --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --ledf:"DotGothic16","Courier New",monospace;
+  --nav-h:68px; --land-h:88px; --gutter:clamp(20px,4.5vw,88px);
+  --paper:var(--white); --text:var(--ink);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#121212;--warm:#1A1A19;--text:#F4F2EE;--muted:#A3A19C;--line:#2B2A28}}
+:root[data-theme="dark"]{--paper:#121212;--warm:#1A1A19;--text:#F4F2EE;--muted:#A3A19C;--line:#2B2A28}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px))}
+main,.zone:not(.hero){overflow-x:clip}
+.doors{overflow:hidden;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;height:auto;display:block}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.arw{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid currentColor;border-radius:50%;font-size:13px;line-height:1;flex:none;transition:transform .25s,background .25s,color .25s}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--nav-h);background:var(--paper);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--gutter)}
+.brand{justify-self:start;text-decoration:none;font-weight:600;font-size:17px;letter-spacing:-.01em}
+.brand i{font-family:var(--serif);font-weight:400;color:var(--muted);margin-left:6px}
+.led{background:var(--ink);color:var(--amber);font-family:var(--ledf);font-size:19px;line-height:1;padding:7px 12px 6px;border-radius:4px;display:flex;gap:8px;align-items:center;min-width:70px;justify-content:center}
+.led .arrow{font-size:10px;opacity:.25;transition:transform .3s,opacity .3s}.led .arrow.on{opacity:1}.led .arrow.down{transform:rotate(180deg)}
+.links{justify-self:end;display:flex;gap:clamp(18px,2.4vw,40px);font-size:15px;font-weight:500}
+.links a{text-decoration:none;padding:6px 0;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .25s}
+.links a:hover,.links a[aria-current="true"]{background-size:100% 1px}
+
+/* HERO */
+.hero{position:relative;isolation:isolate;background:linear-gradient(180deg,#E0AE45 0%,#E0AE44 10%,#E3B042 20%,#E3AF3D 30%,#E2AC37 40%,#DFA933 50%,#DDA630 60%,#DAA32A 70%,#D7A028 80%,#D29C24 90%,#CC9525 100%);container-type:inline-size;width:min(100%,calc((100svh - var(--nav-h) - 112px + 28px) * 16 / 9));margin:0 auto;}
+.hero-wrap{background:linear-gradient(180deg,#E0AE45 0%,#E0AE44 10%,#E3B042 20%,#E3AF3D 30%,#E2AC37 40%,#DFA933 50%,#DDA630 60%,#DAA32A 70%,#D7A028 80%,#D29C24 90%,#CC9525 100%)}
+.hero-media{position:relative}
+.hero video,.hero .still{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%)}
+.hero .still{position:absolute;inset:0;height:100%;transition:opacity .6s ease}
+.hero .still.off{opacity:0}
+.hero-copy{position:absolute;inset:0;margin:0;color:var(--ink);pointer-events:none}
+.hero-copy span{position:absolute;display:block}
+.hero-copy b{display:block;font-family:var(--sans);font-weight:700;letter-spacing:-.035em;line-height:.92}
+.hero-copy i{display:block;font-family:var(--serif);font-style:normal;font-weight:400;letter-spacing:-.01em;line-height:.95}
+.hero-copy .a{right:81.4%;top:37%;text-align:right}
+.hero-copy b{font-size:3.3cqw}
+.hero-copy .b{left:81.4%;top:66%;text-align:left}
+
+.cue{position:absolute;left:50%;bottom:calc(28px + 2.4cqw);transform:translateX(-50%);display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.01em;padding:8px 10px 8px 18px;border-radius:999px;background:#14141466;backdrop-filter:blur(8px);z-index:3}
+.cue:hover{background:#141414aa}
+.cue .arw{animation:nudge 2.4s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* BRANDS */
+.brands{position:relative;z-index:4;margin-top:-28px;box-shadow:0 -10px 24px #00000026;background:var(--band);display:grid;grid-template-columns:auto 1fr;align-items:center;height:112px;overflow:hidden}
+.brands-label{margin:0;height:100%;display:flex;align-items:center;padding:0 clamp(18px,2.6vw,48px);color:#fff;font-family:var(--serif);font-style:normal;font-size:16px;line-height:1.2;border-right:1px solid #ffffff33;white-space:nowrap}
+.marquee{overflow:hidden;height:100%;-webkit-mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.track{display:flex;width:max-content;height:100%;animation:slide 60s linear infinite}
+.group{display:flex;align-items:center;gap:clamp(48px,5vw,88px);padding-right:clamp(48px,5vw,88px);height:100%}
+.group img{width:auto;max-width:none;flex:none}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ABOUT */
+/*a*/.about{display:flex;flex-direction:column;align-items:center;padding:clamp(48px,6vh,72px) var(--gutter) clamp(32px,4vh,48px);text-align:center;background:var(--paper)}
+.about h2{font-weight:700;font-size:clamp(34px,3vw,56px);letter-spacing:-.03em;line-height:1;margin:0}
+.about .lede{font-family:var(--serif);font-style:normal;font-size:clamp(22px,1.9vw,32px);line-height:1.25;margin:14px 0 0;max-width:34ch}
+.about .bio{max-width:70ch;margin:16px auto 0;font-size:16px;color:var(--text)}
+.facts{display:grid;grid-template-columns:repeat(4,auto);gap:clamp(24px,4vw,72px);margin:24px 0 0;padding:18px 0 0;border-top:1px solid var(--line);text-align:left}
+.facts dt{font-size:12px;color:var(--muted);margin:0}
+.facts dd{margin:2px 0 0;font-size:14px;font-weight:500;line-height:1.45}
+.about .pile{width:auto;max-width:min(1000px,92vw);max-height:520px;margin-top:8px}
+.next-cue{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:14px;font-weight:500;margin:20px 0 4px}
+.next-cue:hover .arw{background:var(--text);color:var(--paper)}
+
+/* LOBBY: elevator buttons */
+.lobby{background:var(--paper);padding:clamp(56px,8vh,104px) var(--gutter) clamp(40px,6vh,72px)}
+.lobby-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(32px,5vh,56px)}
+.lobby-head h2{font-weight:700;font-size:clamp(34px,3vw,56px);letter-spacing:-.03em;line-height:1;margin:0}
+.lobby-head p{margin:0;font-family:var(--serif);font-style:normal;font-size:clamp(18px,1.4vw,24px);color:var(--muted);max-width:34ch;text-align:right}
+.panelgrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.fcard{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px;padding:clamp(28px,4vh,48px) 16px clamp(24px,3.5vh,40px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:none;border-top:0;border-left:0;cursor:pointer;font:inherit;color:inherit;text-align:center;transition:background .3s}
+.fcard:hover{background:var(--warm)}
+.fbtn{position:relative;width:clamp(120px,10vw,176px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 30%,#ffffff 0%,#e4e5e7 32%,#b9bbbf 68%,#94969a 100%);
+  box-shadow:inset 0 3px 5px #ffffffcc,inset 0 -8px 14px #00000033,0 0 0 9px #ecedef,0 0 0 10px #cfd1d4,0 14px 28px #0000002a;transition:transform .15s}
+.fbtn::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:5px solid var(--c);opacity:0;box-shadow:0 0 22px var(--c),inset 0 0 12px var(--c);transition:opacity .3s}
+.fbtn b{font-family:var(--sans);font-weight:700;font-size:clamp(42px,3.6vw,64px);line-height:1;color:#2b2c30;text-shadow:0 1px 0 #ffffffcc,0 -1px 0 #0000002e;transition:color .3s}
+.fcard:hover .fbtn::before,.fcard:focus-visible .fbtn::before{opacity:1}
+.fcard:hover .fbtn b{color:var(--c)}
+.fcard:active .fbtn{transform:translateY(2px) scale(.98)}
+.fmon{position:absolute;height:80%;width:auto;max-width:none;right:-34%;bottom:-6%;pointer-events:none;filter:drop-shadow(0 8px 10px #0000002a);transition:transform .35s cubic-bezier(.3,1.5,.5,1);z-index:2}
+.fmon.wide{height:58%;right:-70%;bottom:-6%}
+.fcard:hover .fmon{transform:translateY(-6px) rotate(-4deg)}
+.fmeta{display:flex;flex-direction:column;gap:2px}
+.fmeta .k{font-size:12px;font-weight:600;color:var(--muted)}
+.fmeta .p{font-family:var(--serif);font-style:normal;font-size:clamp(19px,1.4vw,24px);line-height:1.2}
+.fmeta .y{font-size:13px;color:var(--muted)}
+.c-pink{--c:var(--pink)}.c-cobalt{--c:var(--cobalt)}.c-amber{--c:var(--amber)}
+
+/* DOORS */
+.doors{position:fixed;left:0;right:0;bottom:0;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));z-index:40;pointer-events:none;display:grid;grid-template-columns:1fr 1fr}
+.door{background:repeating-linear-gradient(90deg,#ffffff40 0 1px,transparent 1px 4px),linear-gradient(90deg,#E4DFD5,#F6F3ED 45%,#DDD7CC);transition:transform .42s cubic-bezier(.7,0,.3,1)}
+.door.l{transform:translateX(-101%);box-shadow:inset -1px 0 0 #BDB6AA}
+.door.r{transform:translateX(101%);box-shadow:inset 1px 0 0 #fff}
+.doors.shut .door{transform:none}
+.doors .sign{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--ledf);font-size:clamp(48px,6vw,96px);color:var(--ink);opacity:0;transition:opacity .15s}
+.doors.shut .sign{opacity:1;transition-delay:.25s}
+
+/* CASE: sticky story + curated work wall */
+.case{display:grid;grid-template-columns:44fr 56fr;align-items:start}
+.info{position:sticky;top:calc(var(--nav-h) + env(safe-area-inset-top,0px));min-height:calc(100svh - var(--nav-h));background:var(--c);color:var(--fg,var(--ink));padding:clamp(28px,5vh,72px) clamp(28px,4.4vw,88px) 0;display:flex;flex-direction:column}
+.c-meta{font-size:14px;font-weight:500;margin:0 0 14px;opacity:.78}
+.c-title{font-weight:700;font-size:clamp(36px,3.6vw,72px);line-height:.98;letter-spacing:-.035em;margin:0;max-width:12ch}
+.c-title.long{font-size:clamp(30px,2.8vw,54px);max-width:17ch}
+.c-hook{font-family:var(--serif);font-style:normal;font-size:clamp(18px,1.45vw,26px);line-height:1.22;margin:16px 0 0;max-width:30ch}
+.c-copy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px clamp(20px,2.4vw,44px);margin-top:clamp(18px,3vh,40px)}
+.c-copy.one{grid-template-columns:1fr;max-width:62ch}
+.c-copy h3{font-size:13px;font-weight:600;margin:0 0 4px}
+.c-copy p{margin:0;font-size:14.5px;line-height:1.56}
+.c-foot{margin-top:auto;display:flex;align-items:flex-end;gap:clamp(16px,2vw,32px);padding:20px 0 clamp(24px,4vh,48px)}
+.award{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px);margin-top:clamp(20px,3vh,36px);padding:clamp(16px,2vh,24px) 0;border-top:1px solid #14141426;border-bottom:1px solid #14141426}
+.award button{background:none;border:0;padding:0;cursor:zoom-in;flex:none}
+.award img{width:clamp(200px,15vw,300px);box-shadow:0 14px 34px #14141433;background:#fff}
+.award .w{font-weight:700;font-size:clamp(34px,3vw,58px);line-height:1;letter-spacing:-.03em;margin:0}
+.award .w i{display:block;font-family:var(--serif);font-weight:400;font-size:.5em;letter-spacing:0;margin-top:10px;line-height:1.3}
+.stat{margin:0;font-weight:700;font-size:clamp(26px,2.3vw,44px);line-height:1;letter-spacing:-.03em}
+.stat i{display:block;font-family:var(--serif);font-weight:400;font-size:.5em;letter-spacing:0;margin-top:10px}
+.monster{position:relative;background:none;border:0;padding:0;cursor:pointer;width:clamp(140px,11vw,220px);margin-left:auto;flex:none}
+.monster.wide{width:clamp(220px,16vw,320px)}
+.monster img{transform-origin:50% 100%;animation:breathe 3s ease-in-out infinite;position:relative;z-index:1}
+.monster::after{content:"";position:absolute;left:12%;right:12%;bottom:-6px;height:16px;border-radius:50%;background:#14141433;filter:blur(8px)}
+.monster:hover img{animation:wiggle .7s ease-in-out infinite}
+.monster.hop img{animation:hop .55s cubic-bezier(.3,.7,.4,1)}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,.975)}}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+@keyframes hop{0%{transform:scale(1.1,.88)}35%{transform:translateY(-26px) scale(.95,1.06)}70%{transform:translateY(0) scale(1.06,.94)}100%{transform:none}}
+
+.work{padding:clamp(40px,6vh,80px) calc(clamp(28px,3.4vw,72px) + 44px) clamp(40px,6vh,80px) clamp(28px,3.4vw,72px);display:flex;flex-direction:column;gap:clamp(44px,6vh,72px);min-height:calc(100svh - var(--nav-h))}
+.blk{display:flex;flex-direction:column;gap:16px}
+.blk-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:10px;border-bottom:1px solid var(--line);font-size:13px;font-weight:600}
+.blk-h span:last-child{font-weight:400;color:var(--muted)}
+.grid{display:grid;gap:clamp(12px,1.2vw,20px);grid-template-columns:repeat(var(--n,1),minmax(0,1fr))}
+.grid figure{margin:0;display:flex;flex-direction:column;align-items:center;min-width:0}
+.grid .cell{width:100%;aspect-ratio:var(--ar,auto);display:grid;place-items:center;overflow:hidden}
+.grid .cell img,.grid .cell video{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;cursor:zoom-in}
+.grid .cell video{cursor:default;width:100%;height:100%}
+.grid.free .cell{aspect-ratio:auto}.grid.free .cell img{width:100%}
+.grid figcaption{font-size:12.5px;color:var(--muted);margin-top:8px;text-align:center;line-height:1.4;max-width:46ch}
+.blk-cap{font-size:13px;color:var(--muted);text-align:center;margin:0;line-height:1.5}
+.grid .wide2{grid-column:span 2}
+.grid.narrow{width:min(100%,640px);align-self:center}
+.grid.eh-lead .cell{width:min(100%,calc(82svh * 9 / 16));margin:0 auto}
+
+.grid.oddlast>figure:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - clamp(12px,1.2vw,20px)/2);justify-self:center}
+
+
+i,em{font-style:normal}
+.nav{transition:background .3s,border-color .3s}
+.nav.lift{background:#F9CB5A;border-bottom-color:#00000014}
+.nav.lift .brand,.nav.lift .links a{color:var(--ink)}
+.peek{position:absolute;background:none;border:0;padding:0;cursor:pointer;z-index:1;width:clamp(270px,20vw,410px);transition:transform .45s cubic-bezier(.3,1.4,.5,1);filter:drop-shadow(0 12px 18px #0000002e)}
+.peek img{width:100%;height:auto}
+.peek.big{width:clamp(340px,26vw,540px)}
+.p-right{right:0;bottom:7%;transform:translateX(40%) rotate(-6deg)}
+.p-right:hover{transform:translateX(22%) rotate(-2deg)}
+.p-bottom{right:-6%;bottom:0;transform:translateY(38%)}
+.c-foot .stat i{max-width:19ch}
+.p-bottom:hover{transform:translateY(22%)}
+.p-lie{right:5%;bottom:3%;width:clamp(370px,28vw,570px)}
+.p-lie:hover{transform:translateY(-6px) rotate(-2deg)}
+.info{overflow:hidden;overflow:clip}
+.c-foot{padding-right:min(50%,460px);min-height:clamp(240px,30vh,350px);box-sizing:border-box}
+.c-link{margin:22px 0 0}
+.contact{position:relative;overflow:hidden}
+.contact .peek{right:5%;top:clamp(56px,9vh,110px);width:clamp(210px,15.5vw,310px)}.contact .p-stand:hover{transform:translateY(-6px) rotate(-3deg)}
+@media (max-width:1100px){.peek{width:clamp(200px,25vw,290px)}.peek.big{width:clamp(240px,30vw,350px)}.p-lie{width:clamp(300px,37vw,420px)}.c-foot{padding-right:44%;min-height:clamp(200px,26vw,290px)}.contact .peek{width:clamp(180px,22vw,240px)}}
+@media (prefers-reduced-motion:reduce){.peek{transition:none}}
+/* RAIL + thesis blocks */
+.rail{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:45;display:flex;flex-direction:column;gap:8px;padding:10px 7px;border-radius:999px;background:#ffffffd9;backdrop-filter:blur(8px);box-shadow:0 6px 20px #14141418;opacity:0;pointer-events:none;transition:opacity .3s}
+.rail.on{opacity:1;pointer-events:auto}
+.rail button{width:30px;height:30px;border-radius:50%;border:0;cursor:pointer;font-size:11px;font-weight:700;color:#2b2c30;background:radial-gradient(circle at 50% 30%,#fff,#e2e3e5 40%,#a9abaf);box-shadow:inset 0 2px 3px #fff,inset 0 -3px 5px #0003;transition:background .2s,color .2s}
+.rail button[aria-current="true"]{background:var(--cobalt);color:#fff;box-shadow:0 0 0 3px #0047ff33}
+.rail button:hover{color:var(--cobalt)}
+.sign{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.2vw,20px)}
+.sg{background:var(--warm);padding:clamp(20px,2.4vw,40px);display:flex;flex-direction:column;gap:8px;aspect-ratio:4/3;justify-content:flex-end}
+.sg b{font-weight:700;font-size:clamp(64px,7vw,128px);line-height:.8;letter-spacing:-.04em;color:var(--amber)}
+.sg span{font-family:var(--serif);font-style:normal;font-size:clamp(20px,1.6vw,28px)}
+.audit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px clamp(20px,2.4vw,40px)}
+.audit div{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.audit b{font-weight:700;font-size:clamp(44px,4vw,72px);line-height:1;letter-spacing:-.03em}
+.audit span{font-size:15px;color:var(--muted);max-width:32ch}
+@media (max-width:1100px){.rail{display:none}.work{padding-right:clamp(28px,3.4vw,72px)}.panelgrid{grid-template-columns:repeat(2,1fr)}}
+
+/* LANDING: lift panel */
+.landing{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:28px var(--gutter);border-top:1px solid var(--line);background:var(--paper)}
+.l-left{display:flex;gap:12px;align-items:center;justify-self:start;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 22px;border-radius:999px;border:2px solid var(--cobalt);background:transparent;color:var(--cobalt);font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
+.pill .ic{font-size:18px;line-height:1}
+.pill:hover{background:var(--cobalt);color:#fff}
+.pill.solid{background:var(--cobalt);color:#fff}
+.pill.solid:hover{background:#0036c2;border-color:#0036c2}
+.pill .s{font-weight:400;opacity:.85;margin-right:4px}
+.l-right{justify-self:end}
+.minis{display:flex;gap:10px;align-items:center}
+.mini{position:relative;width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;font-weight:700;font-size:15px;color:#2b2c30;
+  background:radial-gradient(circle at 50% 30%,#fff,#e2e3e5 40%,#a9abaf);box-shadow:inset 0 2px 3px #fff,inset 0 -4px 7px #0003,0 0 0 3px #eceef0,0 0 0 4px #cfd1d4}
+.mini::before{content:"";position:absolute;inset:-5px;border-radius:50%;border:3px solid var(--cobalt);opacity:0;box-shadow:0 0 12px #0047ff88;transition:opacity .25s}
+.mini:hover::before,.mini[aria-current="true"]::before{opacity:1}
+.mini[aria-current="true"]{color:var(--cobalt)}
+.minis .here{font-size:12px;color:var(--muted);margin-left:6px;white-space:nowrap}
+
+/* CONTACT */
+.contact{background:#0E0E0E;color:#F4F2EE;padding:clamp(72px,12vh,140px) var(--gutter) 40px}
+.contact .big{font-weight:700;font-size:clamp(48px,7vw,132px);letter-spacing:-.04em;line-height:.92;margin:0}
+.contact .big i{font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
+.contact .row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:clamp(48px,8vh,96px);padding-top:28px;border-top:1px solid #ffffff26;font-size:15px}
+.contact .row h3{font-size:12px;font-weight:500;color:#A3A19C;margin:0 0 6px}
+.contact .row p{margin:0}
+.contact a{text-decoration:none;border-bottom:1px solid #ffffff55}
+.contact a:hover{border-color:#fff}
+.contact .dim{font-size:13px;color:#A3A19C}
+.contact .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(28px,5vh,48px)}
+.contact .cta a{border-bottom:0}
+.contact .pill.ghost{border-color:#F4F2EE;color:#F4F2EE}
+.contact .pill.ghost:hover{background:#F4F2EE;color:#0E0E0E}
+.contact .deep{margin:14px 0 0;font-size:14px;color:#A3A19C;max-width:62ch}
+.lobby-more{margin:clamp(20px,3vh,32px) 0 0;display:flex;justify-content:flex-end}
+.lobby-more a{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--cobalt);text-decoration:none;border-bottom:2px solid var(--cobalt);padding-bottom:2px}
+.lobby-more a:hover{opacity:.8}
+.small{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:64px;font-size:12px;color:#A3A19C}
+.small button{background:none;border:0;color:#F4F2EE;cursor:pointer;display:inline-flex;gap:10px;align-items:center;font-size:13px}
+
+dialog{border:0;padding:0;background:transparent;max-width:94vw;max-height:94vh}
+dialog::backdrop{background:#141414e8}
+dialog img{max-height:90vh;width:auto;max-width:94vw}
+
+@media (max-width:1100px){
+  .case{grid-template-columns:1fr}
+  .info{position:relative;height:auto;padding-bottom:0}
+  .work{min-height:0}
+  .panelgrid{grid-template-columns:repeat(2,1fr)}
+  .landing{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .l-left,.l-right{justify-self:center}
+  .minis{order:-1;flex-wrap:wrap;justify-content:center}
+}
+@media (max-width:700px){
+  .hero{width:100%}
+  .hero video,.hero .still{aspect-ratio:1/1;object-fit:cover;object-position:50% 50%;-webkit-mask-image:none;mask-image:none}.brands{margin-top:0}
+  .led{display:none}.nav{grid-template-columns:auto 1fr}
+  .brand i{display:none}.links{gap:16px;font-size:14px}
+  .hero-copy{position:static;inset:auto;background:var(--paper);color:var(--text);padding:28px var(--gutter) 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+  .hero-copy span{position:static}.hero-copy .a{text-align:left}.hero-copy .b{text-align:right}
+  .hero-copy b{font-size:28px}
+  .cue{display:none}
+  .brands{height:80px;--ls:.62}.brands-label{font-size:13px}
+  .facts{grid-template-columns:1fr 1fr}
+  .about .pile{max-height:none}
+  .grid.oddlast>figure:last-child{width:auto}
+  .links a{display:inline-flex;align-items:center;min-height:44px;padding:0;background-position:0 calc(100% - 8px)}
+  .next-cue{min-height:44px}
+  .contact .row a{display:inline-block;padding:11px 0;border-bottom:0;text-decoration:underline;text-decoration-color:#ffffff66;text-underline-offset:5px}
+  .fcard:nth-child(even) .fmon{right:-26%!important}
+  .contact .small{flex-wrap:wrap;gap:16px}.contact .small button{white-space:nowrap;min-height:44px}
+  .lobby-head{flex-direction:column;align-items:flex-start}.lobby-head p{text-align:left}
+  .c-copy{grid-template-columns:1fr}
+  .grid{--n:1!important}.grid.keep2{--n:2!important}.grid.keep3{--n:3!important;gap:8px}.grid .wide2{grid-column:auto}
+  .mini{width:38px;height:38px;font-size:13px}.minis .here{display:none}
+  .contact .row{grid-template-columns:1fr}
+  .landing .fwd{font-size:13px}
+  .c-foot{padding-right:46%;min-height:clamp(170px,48vw,210px)}
+  .info .peek{width:clamp(160px,46vw,190px)}.info .peek.big{width:clamp(190px,55vw,225px)}.info .p-lie{width:clamp(220px,64vw,255px);bottom:8px}
+  .info .p-right{bottom:10px;transform:translateX(20%) rotate(-6deg)}
+  .info .p-bottom{right:-4%}
+}
+@media (prefers-reduced-motion:reduce){
+  .door,.doors .sign{transition:none}
+  .track,.monster img,.cue .arw{animation:none!important}
+}
+@media print{.doors,.cue{display:none}.track{animation:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav lift" aria-label="Main">
+  <a class="brand" href="#g" data-go="g">Nanak Anand</a>
+  <div class="led" aria-hidden="true"><span class="arrow" id="arrow">▲</span><span id="ledNum">G</span></div>
+  <div class="links">
+    <a href="#about" data-go="about">About</a>
+    <a href="#floors" data-go="floors">Floors</a>
+    <a href="#contact" data-go="contact">Contact</a>
+  </div>
+</nav>
+
+<nav class="rail" id="rail" aria-label="Floor rail"><button type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><button type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button></nav><div class="doors" id="doors" aria-hidden="true"><div class="door l"></div><div class="door r"></div><div class="sign" id="doorSign">1</div></div>
+
+<div class="hero-wrap"><header class="hero zone" id="g" data-floor="G">
+  <div class="hero-media"><video id="heroVid" src="hero-lift-v6.mp4" width="1280" height="720" muted loop playsinline preload="auto" aria-hidden="true"></video><img class="still" id="heroStart" src="hero-start-v6.jpg" width="1280" height="720" fetchpriority="high" decoding="async" alt=""><img class="still off" id="heroStill" src="hero-open-v6.jpg" width="1920" height="1080" decoding="async" alt="Nanak in a lift with four plush monsters"></div>
+  <h1 class="hero-copy">
+    <span class="a"><b>Press</b><b>any floor</b></span>
+    <span class="b"><b>everyone</b><b>has a story</b></span>
+  </h1>
+  <a class="cue" href="#about" data-go="about"><span>Step inside</span><span class="arw">↓</span></a>
+</header></div>
+
+<section class="brands" aria-label="Where I've studied and worked">
+  <p class="brands-label">Where I've studied<br>and worked</p>
+  <div class="marquee"><div class="track"><div class="group"><img src="assets/img-001.png" alt="BCG" style="height:calc(40px * var(--ls,1))"><img src="assets/img-002.png" alt="NIFT" style="height:calc(64px * var(--ls,1))"><img src="assets/img-003.png" alt="University of Auckland" style="height:calc(42px * var(--ls,1))"><img src="assets/img-004.png" alt="Indospirit" style="height:calc(52px * var(--ls,1))"><img src="assets/img-005.png" alt="Gartner" style="height:calc(30px * var(--ls,1))"><img src="assets/img-006.png" alt="Organise with Kopal" style="height:calc(58px * var(--ls,1))"><img src="assets/img-007.png" alt="PNB" style="height:calc(40px * var(--ls,1))"></div><div class="group" aria-hidden="true"><img src="assets/img-001.png" alt="" data-a="BCG" style="height:calc(40px * var(--ls,1))"><img src="assets/img-002.png" alt="" data-a="NIFT" style="height:calc(64px * var(--ls,1))"><img src="assets/img-003.png" alt="" data-a="University of Auckland" style="height:calc(42px * var(--ls,1))"><img src="assets/img-004.png" alt="" data-a="Indospirit" style="height:calc(52px * var(--ls,1))"><img src="assets/img-005.png" alt="" data-a="Gartner" style="height:calc(30px * var(--ls,1))"><img src="assets/img-006.png" alt="" data-a="Organise with Kopal" style="height:calc(58px * var(--ls,1))"><img src="assets/img-007.png" alt="" data-a="PNB" style="height:calc(40px * var(--ls,1))"></div></div></div>
+</section>
+
+<section class="about zone" id="about" data-floor="G" aria-labelledby="about-t">
+  <h2 id="about-t">About me</h2>
+  <p class="lede">I make complex things feel human, and I'm honest about how I make them.</p>
+  <p class="bio">I'm a designer from Delhi, now based in Christchurch. I spent two and a half years at BCG's in-house design studio in New Delhi, turning strategy and data into work people could read at a glance, and earlier designed social and launch work for a hard seltzer start-up. I hold a Master of Design with First Class Honours from the University of Auckland, and a Bachelor of Design in Fashion Communication from NIFT Delhi.</p>
+  <dl class="facts">
+    <div><dt>Based in</dt><dd>Christchurch,<br>Aotearoa New Zealand</dd></div>
+    <div><dt>Previously</dt><dd>BCG Global In-House<br>Design Studio</dd></div>
+    <div><dt>I work across</dt><dd>Brand, campaigns,<br>reports and UI/UX</dd></div>
+    <div><dt>Languages</dt><dd>English, Hindi<br>and Punjabi</dd></div>
+  </dl>
+  <a class="next-cue" href="#floors" data-go="floors">See the floors <span class="arw">↓</span></a>
+  <img class="pile" src="assets/img-008.webp" width="1400" height="801" alt="Four plush monsters asleep in a pile">
+</section>
+
+<section class="lobby zone" id="floors" data-floor="G" aria-labelledby="lobby-t">
+  <div class="lobby-head">
+    <h2 id="lobby-t">Choose a floor</h2>
+    <p>Nine projects, in the order they happened. Press a button and the lift takes you there.</p>
+  </div>
+  <div class="panelgrid"><button class="fcard c-pink" type="button" data-go="f1" aria-label="Floor 1, White Rhino"><span class="fbtn"><b>1</b><img class="fmon" style="" src="assets/img-009.webp" width="420" height="419" alt=""></span><span class="fmeta"><span class="k">Floor 1</span><span class="p">White Rhino</span><span class="y">2019</span></span></button><button class="fcard c-cobalt" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer"><span class="fbtn"><b>2</b><img class="fmon" style="right:-52%;bottom:-8%;height:74%" src="assets/img-010.webp" width="440" height="422" alt=""></span><span class="fmeta"><span class="k">Floor 2</span><span class="p">Bro Seltzer</span><span class="y">2020 to 2021</span></span></button><button class="fcard c-amber" type="button" data-go="f3" aria-label="Floor 3, PNB One"><span class="fbtn"><b>3</b><img class="fmon wide" style="height:54%;right:-52%;bottom:-6%" src="assets/img-011.webp" width="500" height="257" alt=""></span><span class="fmeta"><span class="k">Floor 3</span><span class="p">PNB One</span><span class="y">Designed at BCG</span></span></button><button class="fcard c-pink" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG"><span class="fbtn"><b>4</b><img class="fmon" style="height:96%;right:-46%;bottom:-10%" src="assets/img-012.webp" width="440" height="625" alt=""></span><span class="fmeta"><span class="k">Floor 4</span><span class="p">Earth Center by BCG</span><span class="y">2022</span></span></button><button class="fcard c-cobalt" type="button" data-go="f5" aria-label="Floor 5, The RAI report"><span class="fbtn"><b>5</b><img class="fmon" style="right:-44%;height:68%" src="assets/img-013.webp" width="440" height="418" alt=""></span><span class="fmeta"><span class="k">Floor 5</span><span class="p">The RAI report</span><span class="y">2023</span></span></button><button class="fcard c-amber" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal"><span class="fbtn"><b>6</b><img class="fmon" style="" src="assets/img-014.webp" width="420" height="398" alt=""></span><span class="fmeta"><span class="k">Floor 6</span><span class="p">Organise with Kopal</span><span class="y">2023</span></span></button><button class="fcard c-pink" type="button" data-go="f7" aria-label="Floor 7, EH Couture"><span class="fbtn"><b>7</b><img class="fmon" style="" src="assets/img-015.webp" width="420" height="412" alt=""></span><span class="fmeta"><span class="k">Floor 7</span><span class="p">EH Couture</span><span class="y">2024</span></span></button><button class="fcard c-cobalt" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR"><span class="fbtn"><b>8</b><img class="fmon" style="height:72%;right:-30%" src="assets/img-016.webp" width="360" height="468" alt=""></span><span class="fmeta"><span class="k">Floor 8</span><span class="p">Climate × SRHR</span><span class="y">2025</span></span></button><button class="fcard c-amber" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework"><span class="fbtn"><b>9</b><img class="fmon" style="height:96%;right:-50%;bottom:-10%" src="assets/img-017.webp" width="460" height="459" alt=""></span><span class="fmeta"><span class="k">Floor 9</span><span class="p">The SIGN framework</span><span class="y">Master's thesis</span></span></button></div>
+</section>
+
+<main><section class="zone" id="f1" data-floor="1" aria-labelledby="f1-t">
+<div class="case">
+ <div class="info" style="--c:var(--pink)">
+  <p class="c-meta">Floor 1. Label design project, 2019.</p>
+  <h2 class="c-title" id="f1-t">White Rhino Brewing Co.</h2>
+  <p class="c-hook">Stout is the serious beer on the shelf. I made it the fun one.</p>
+  <div class="award"><button type="button" data-zoom aria-label="Open the certificate"><img src="assets/img-018.webp" width="900" height="1255" alt="White Rhino Brewing Co. certificate of achievement, third prize, 20 February 2019"></button><p class="w">Third prize<i>White Rhino Brewing Co.<br>February 2019</i></p></div>
+  <div class="c-copy"><div><h3>The brief</h3><p>A limited-edition stout label with the brand's bold personality, built to stand out on shelf and speak to a younger craft beer crowd.</p></div><div><h3>The idea</h3><p>Skip barley, barrels and brewery heritage. Borrow from 1980s vapourwave instead: neon gradients, palm trees, a pink retro phone, and the line Shout for Stout. Sharp. Strong. Dark.</p></div><div><h3>The craft</h3><p>A moodboard locked the palette, then the full wraparound label, legal and product information included, without losing the energy.</p></div><div><h3>What happened</h3><p>Third prize, awarded by director Ishaan Puri in February 2019.</p></div></div>
+  
+  <div class="c-foot"></div>
+  <button class="peek p-bottom" type="button" aria-label="Peep. Say hello."><img src="assets/img-014.webp" width="420" height="398" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Final outcome</span><span>Bottle mock-up</span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-019.webp" width="1400" height="933" alt="Three bottles of White Rhino stout wearing the vapourwave label" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Final artwork</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-020.webp" width="1100" height="540" alt="Flat wraparound label artwork" data-zoom tabindex="0"></div><figcaption>The full wraparound label, legal panel included.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>Process</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-021.webp" width="1400" height="990" alt="Vapourwave moodboard with neon palm trees, a pink phone and a purple palette" data-zoom tabindex="0"></div><figcaption>Moodboard of references by other artists, used to set the palette.</figcaption></figure></div></div></div>
+</div>
+<nav class="landing" aria-label="Floor 1 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino" aria-current="true">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 1</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f2"><span><span class="s">Next, floor 2</span>Bro Seltzer</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f2" data-floor="2" aria-labelledby="f2-t">
+<div class="case">
+ <div class="info" style="--c:var(--cobalt);--fg:#fff">
+  <p class="c-meta">Floor 2. Indospirit Beverages, 2020 to 2021.</p>
+  <h2 class="c-title" id="f2-t">Bro Seltzer</h2>
+  <p class="c-hook">91 calories, zero sugar, 5% ABV. My job was making the numbers fun.</p>
+  
+  <div class="c-copy"><div><h3>The brief</h3><p>Launch a low-calorie hard seltzer in India, a category most people had never heard of. The surrealist identity already existed: classical statues with lemon-slice eyes.</p></div><div><h3>The idea</h3><p>Turn nutrition facts into punchlines. A statue crowned King of Low Cal. A philosopher riding a penny-farthing made from a vinyl record.</p></div><div><h3>My role</h3><p>Marketing executive and newest member of a three-person design team. I designed social creatives for city launches in Goa and Bengaluru, animated two motion pieces, designed merch tees and joined packaging discussions.</p></div><div><h3>What happened</h3><p>The product launched across Indian cities, and the work ran on the brand's social channels through launch.</p></div></div>
+  
+  <div class="c-foot"><p class="stat">Goa and Bengaluru<i>City launch campaigns</i></p></div>
+  <button class="peek p-bottom" type="button" aria-label="Puff. Say hello."><img src="assets/img-022.webp" width="440" height="508" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Launch campaign</span><span></span></div><div class="grid free narrow" style="--n:1"><figure class=""><div class="cell"><img src="assets/img-023.webp" width="829" height="835" alt="Statue with lemon-slice eyes between two Bro Seltzer bottles" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Social posts</span><span>Six of the series</span></div><div class="grid " style="--n:3;--ar:1"><figure class=""><div class="cell"><img src="assets/img-024.webp" width="640" height="640" alt="King of Low Cal" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-025.webp" width="640" height="640" alt="Low Cal Rolling" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-026.webp" width="640" height="640" alt="Tuning" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-027.webp" width="640" height="640" alt="Now chilling in Goa" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-028.webp" width="640" height="640" alt="Now chilling in Namma Bengaluru" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-029.webp" width="640" height="640" alt="Christmas post" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Motion</span><span>Animated by me</span></div><div class="grid " style="--n:2;--ar:1"><figure class=""><div class="cell"><video src="bro-seltzer-91cal.mp4" poster="assets/img-030.webp" muted loop playsinline autoplay preload="metadata" aria-label="Around the world in 91 cal, animated post"></video></div><figcaption>Around the world in 91 cal.</figcaption></figure><figure class=""><div class="cell"><video src="bro-seltzer-slot.mp4" poster="assets/img-031.webp" muted loop playsinline autoplay preload="metadata" aria-label="Slot machine animated post"></video></div><figcaption>Slot machine.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>In the wild</span><span></span></div><div class="grid free narrow" style="--n:1"><figure class=""><div class="cell"><img src="assets/img-032.webp" width="860" height="1147" alt="Two Bro Seltzer bottles on a bar counter" data-zoom tabindex="0"></div><figcaption>The real bottles at a launch venue.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>Concepts</span><span></span></div><div class="grid " style="--n:3;--ar:4/5"><figure class=""><div class="cell"><img src="assets/img-033.webp" width="395" height="496" alt="Merch tee with the statue mascot" data-zoom tabindex="0"></div><figcaption>Merch tee concept.</figcaption></figure><figure class=""><div class="cell"><img src="assets/img-034.webp" width="700" height="691" alt="Coloured label concepts" data-zoom tabindex="0"></div><figcaption>Label concepts, not produced.</figcaption></figure><figure class=""><div class="cell"><img src="assets/img-035.webp" width="700" height="544" alt="Coloured label concepts, second palette" data-zoom tabindex="0"></div><figcaption>A second palette.</figcaption></figure></div></div></div>
+</div>
+<nav class="landing" aria-label="Floor 2 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f1"><span class="ic">←</span><span><span class="s">Floor 1</span>White Rhino</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer" aria-current="true">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 2</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f3"><span><span class="s">Next, floor 3</span>PNB One</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f3" data-floor="3" aria-labelledby="f3-t">
+<div class="case">
+ <div class="info" style="--c:var(--amber)">
+  <p class="c-meta">Floor 3. Punjab National Bank, designed at BCG.</p>
+  <h2 class="c-title" id="f3-t">PNB One</h2>
+  <p class="c-hook">An instant loan should feel instant.</p>
+  
+  <div class="c-copy"><div><h3>How it started</h3><p>I first designed concept posters for the PNB One app launch. They were approved by the consulting team but not rolled out, and PNB then asked for me by name.</p></div><div><h3>The brief</h3><p>Promote pre-approved personal loans on the app across five formats, from Instagram posts to standees, in one week.</p></div><div><h3>The idea</h3><p>A hand reaching out of a phone with a bag of money: no branch, no paperwork, the loan comes to you. Two routes, a photographic real hand and an illustrated one with a stopwatch for speed.</p></div><div><h3>What happened</h3><p>Both ran. The real-hand route got the most visibility, on billboards across Delhi and on PNB's social channels, and I went on to work on PNB's longer-term projects.</p></div></div>
+  
+  <div class="c-foot"></div>
+  <button class="peek p-lie" type="button" aria-label="Mochi. Say hello."><img src="assets/img-011.webp" width="500" height="257" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Final campaign</span><span></span></div><div class="grid " style="--n:2;--ar:2/3"><figure class=""><div class="cell"><img src="assets/img-036.webp" width="710" height="1065" alt="Real-hand loan poster" data-zoom tabindex="0"></div><figcaption>Real-hand route.</figcaption></figure><figure class=""><div class="cell"><img src="assets/img-037.webp" width="715" height="1065" alt="Illustrated loan poster with a stopwatch" data-zoom tabindex="0"></div><figcaption>Illustrated route.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>Across formats</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-038.webp" width="1400" height="759" alt="The real-hand route on desktop, tablet and Instagram" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-039.webp" width="1400" height="759" alt="The illustrated route on desktop, tablet and Instagram" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>App launch concepts</span><span>Where it started</span></div><div class="grid free " style="--n:2"><figure class=""><div class="cell"><img src="assets/img-040.webp" width="770" height="1090" alt="Portrait concept poster, option 1" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-041.webp" width="775" height="1090" alt="Portrait concept poster, option 2" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-042.webp" width="860" height="496" alt="Landscape concept, option 1" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-043.webp" width="860" height="496" alt="Landscape concept, option 2" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Process</span><span></span></div><div class="grid free " style="--n:2"><figure class=""><div class="cell"><img src="assets/img-044.webp" width="1400" height="788" alt="Brand resources and layout wireframes for the app posters" data-zoom tabindex="0"></div><figcaption>Layout wireframes.</figcaption></figure><figure class=""><div class="cell"><img src="assets/img-045.webp" width="1400" height="788" alt="Brand resources and format sizes for the loan campaign" data-zoom tabindex="0"></div><figcaption>Format sizes.</figcaption></figure></div></div></div>
+</div>
+<nav class="landing" aria-label="Floor 3 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f2"><span class="ic">←</span><span><span class="s">Floor 2</span>Bro Seltzer</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One" aria-current="true">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 3</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f4"><span><span class="s">Next, floor 4</span>Earth Center by BCG</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f4" data-floor="4" aria-labelledby="f4-t">
+<div class="case">
+ <div class="info" style="--c:var(--pink)">
+  <p class="c-meta">Floor 4. BCG Global In-House Design Studio, New Delhi, July 2022.</p>
+  <h2 class="c-title" id="f4-t">Earth Center by BCG</h2>
+  <p class="c-hook">One logo set the direction for an entire launch.</p>
+  <div class="award"><button type="button" data-zoom aria-label="Open the certificate"><img src="assets/img-046.webp" width="900" height="900" alt="BCG DS Awards 2022, Silver, Best in Communication, presented to Nanakdeep Singh Anand"></button><p class="w">Silver<i>Best in Communication<br>BCG DS Awards 2022</i></p></div>
+  <div class="c-copy"><div><h3>The project</h3><p>BCG's India-focused climate and sustainability centre, launched at the Gurugram office and inaugurated by Shri Nitin Gadkari.</p></div><div><h3>My contribution</h3><p>As associate designer, I created the event logo. The mark set the concept for the launch, and the wider team built the invites, standees, danglers and screens from it.</p></div><div><h3>The idea</h3><p>India at the centre of the globe, with leaves rising from a green ring for sustainable growth.</p></div></div>
+  
+  <div class="c-foot"></div>
+  <button class="peek p-bottom big" type="button" aria-label="Bolt. Say hello."><img src="assets/img-047.webp" width="440" height="541" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Final outcome</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-048.webp" width="1400" height="1154" alt="Earth Center event logo alongside the global Center for Sustainable Earth logo" data-zoom tabindex="0"></div><figcaption>The event logo, which I designed, beside the global centre logo.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>The launch</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-049.webp" width="1400" height="789" alt="Shri Nitin Gadkari and BCG leaders inaugurating the Earth Center" data-zoom tabindex="0"></div><figcaption>Inauguration, July 2022.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>Collateral built from the logo</span><span>By the wider team</span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-050.webp" width="1400" height="788" alt="Emailers, danglers and welcome screens" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-051.webp" width="1400" height="804" alt="Backdrop, banner, gift box and standees" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-052.webp" width="1400" height="788" alt="Palette, type, iconography and phone screens" data-zoom tabindex="0"></div></figure></div><p class="blk-cap">The wider studio team extended the logo into the full launch kit.</p></div></div>
+</div>
+<nav class="landing" aria-label="Floor 4 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f3"><span class="ic">←</span><span><span class="s">Floor 3</span>PNB One</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG" aria-current="true">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 4</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f5"><span><span class="s">Next, floor 5</span>The RAI report</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f5" data-floor="5" aria-labelledby="f5-t">
+<div class="case">
+ <div class="info" style="--c:var(--cobalt);--fg:#fff">
+  <p class="c-meta">Floor 5. BCG × Retailers Association of India, February 2023.</p>
+  <h2 class="c-title long" id="f5-t">₹400 Bn opportunity with AI in retail</h2>
+  <p class="c-hook">Turning a dense AI report into something retailers would actually read.</p>
+  
+  <div class="c-copy"><div><h3>The project</h3><p>A 33-page report for BCG and the Retailers Association of India on the opportunity advanced analytics and AI create for Indian retail.</p></div><div><h3>My role</h3><p>Lead designer, directing a team of three. I set the design approach with my manager, approved the team's work and kept us on a strict timeline.</p></div><div><h3>The craft</h3><p>Infographics, data cards and isometric illustrations that carry the argument from opportunity to capability.</p></div></div>
+  
+  <div class="c-foot"><p class="stat">Lead designer<i>Team of three</i></p></div>
+  <button class="peek p-right" type="button" aria-label="Puff. Say hello."><img src="assets/img-010.webp" width="440" height="422" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Final outcome</span><span></span></div><div class="grid free narrow" style="--n:1"><figure class=""><div class="cell"><img src="assets/img-053.webp" width="1000" height="800" alt="Report cover: ₹400 Bn EBITDA opportunity with advanced analytics and AI in retail" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Inside the report</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-054.webp" width="1400" height="560" alt="Opening spread with isometric illustration" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-055.webp" width="1400" height="560" alt="Spread with the ₹400 Bn chart" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="grid free " style="--n:2"><figure class=""><div class="cell"><img src="assets/img-056.webp" width="1400" height="560" alt="Report spread" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-057.webp" width="1400" height="560" alt="Report spread" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-058.webp" width="1400" height="560" alt="Report spread" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-059.webp" width="1400" height="560" alt="Report spread" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-060.webp" width="1400" height="560" alt="Report spread" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-061.webp" width="1400" height="560" alt="Report spread" data-zoom tabindex="0"></div></figure></div><p class="blk-cap">Section openers, data cards and isometric scenes from across the report.</p></div></div>
+</div>
+<nav class="landing" aria-label="Floor 5 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f4"><span class="ic">←</span><span><span class="s">Floor 4</span>Earth Center by BCG</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report" aria-current="true">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 5</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f6"><span><span class="s">Next, floor 6</span>Organise with Kopal</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f6" data-floor="6" aria-labelledby="f6-t">
+<div class="case">
+ <div class="info" style="--c:var(--amber)">
+  <p class="c-meta">Floor 6. Nandee Studios, 2023.</p>
+  <h2 class="c-title" id="f6-t">Organise with Kopal</h2>
+  <p class="c-hook">A brand people trust inside their homes.</p>
+  
+  <div class="c-copy"><div><h3>The brief</h3><p>Nandee Studios' first client: a home organising business in Delhi NCR, run by a lawyer turned professional organiser. A strong service, but no identity.</p></div><div><h3>The idea</h3><p>A retro badge with a lightbulb at its heart, deep maroon with soft aqua, and a line icon set of everyday objects. On Instagram, a dashed thread runs from post to post.</p></div><div><h3>The craft</h3><p>Identity, icon set and launch content. I also wrote the launch copy.</p></div><div><h3>What happened</h3><p>The account has since grown organically to 47.3K followers, and influencers regularly work with her. She still uses the identity across Instagram and her website, and the team wore it as merch.</p></div></div>
+  
+  <div class="c-foot"><p class="stat">47.3K<i>Instagram followers, grown organically</i></p></div>
+  <button class="peek p-right" type="button" aria-label="Peep. Say hello."><img src="assets/img-009.webp" width="420" height="419" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Final outcome</span><span></span></div><div class="grid free narrow" style="--n:1"><figure class=""><div class="cell"><img src="assets/img-062.webp" width="1300" height="1307" alt="Organise with Kopal badge logo printed on a white tee" data-zoom tabindex="0"></div><figcaption>The identity on the team tee.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>Identity system</span><span></span></div><div class="grid " style="--n:2;--ar:1"><figure class=""><div class="cell"><img src="assets/img-063.webp" width="1000" height="1000" alt="Logo on teal, construction grid and colour palette" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-064.webp" width="1000" height="1000" alt="Line icon set and launch carousel with the dashed thread" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Launch posts</span><span>Design and copy</span></div><div class="grid " style="--n:3;--ar:1"><figure class=""><div class="cell"><img src="assets/img-065.webp" width="720" height="720" alt="Who is an organiser? post" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-066.webp" width="720" height="720" alt="Marie Kondo method post" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-067.webp" width="720" height="720" alt="How are we different? post" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Writing the intro</span><span></span></div><div class="grid " style="--n:2;--ar:1"><figure class=""><div class="cell"><img src="assets/img-068.webp" width="720" height="720" alt="Who are we? post, first version" data-zoom tabindex="0"></div><figcaption>One version of the intro post.</figcaption></figure><figure class=""><div class="cell"><img src="assets/img-069.webp" width="720" height="720" alt="Who are we? post, second version" data-zoom tabindex="0"></div><figcaption>The same post with different copy.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>Stories</span><span></span></div><div class="grid " style="--n:4;--ar:9/16"><figure class=""><div class="cell"><img src="assets/img-070.webp" width="480" height="853" alt="Story with a basket of folded clothes" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-071.webp" width="480" height="853" alt="Story with towels being folded" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-072.webp" width="480" height="853" alt="Story with rolled towels" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-073.webp" width="480" height="853" alt="Story with an organised drawer" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>In use today</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-074.webp" width="1400" height="349" alt="Organise with Kopal website using the launch posts" data-zoom tabindex="0"></div><figcaption>Her website still runs the launch posts.</figcaption></figure><figure class=""><div class="cell"><img src="assets/img-075.webp" width="800" height="230" alt="Organise with Kopal Instagram profile with 47.3K followers" data-zoom tabindex="0"></div><figcaption>The verified Instagram account.</figcaption></figure></div></div></div>
+</div>
+<nav class="landing" aria-label="Floor 6 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f5"><span class="ic">←</span><span><span class="s">Floor 5</span>The RAI report</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal" aria-current="true">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 6</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f7"><span><span class="s">Next, floor 7</span>EH Couture</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f7" data-floor="7" aria-labelledby="f7-t">
+<div class="case">
+ <div class="info" style="--c:var(--pink)">
+  <p class="c-meta">Floor 7. Nandee Studios for EH Couture, Kuwait, 2024.</p>
+  <h2 class="c-title" id="f7-t">EH Couture</h2>
+  <p class="c-hook">12 looks. One day. About NZD 2,000.</p>
+  
+  <div class="c-copy"><div><h3>The brief</h3><p>A Kuwaiti label needed campaign imagery for its new collection, for Instagram and a lookbook, on a tight budget.</p></div><div><h3>The idea</h3><p>Find a setting that does the luxury for us: a boutique heritage property, booked as a private Airbnb, whose carved arches and deep colours echo the clothes.</p></div><div><h3>The craft</h3><p>I curated the shoot end to end. Twelve looks in a single day meant planning every set-up and outfit change in advance.</p></div><div><h3>What happened</h3><p>The images became the label's Instagram content and its collection lookbook.</p></div></div>
+  
+  <div class="c-foot"><p class="stat">12 looks, 1 day<i>for about NZD 2,000</i></p></div>
+  <button class="peek p-bottom" type="button" aria-label="Peep. Say hello."><img src="assets/img-014.webp" width="420" height="398" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Reels from the shoot</span><span>Final outcome</span></div><div class="grid eh-lead" style="--n:1;--ar:9/16"><figure class=""><div class="cell"><video src="eh-reel-arcade.mp4" poster="assets/img-076.webp" muted loop playsinline autoplay preload="metadata" class="eh-hero" aria-label="Reel: three looks under the arcade"></video></div></figure></div></div><div class="blk"><div class="grid keep3" style="--n:3;--ar:9/16"><figure class=""><div class="cell"><video src="eh-reel-doorway.mp4" poster="assets/img-077.webp" muted loop playsinline autoplay preload="metadata" aria-label="Reel: three looks in a doorway"></video></div></figure><figure class=""><div class="cell"><video src="eh-reel-courtyard.mp4" poster="assets/img-078.webp" muted loop playsinline autoplay preload="metadata" aria-label="Reel: group in a courtyard"></video></div></figure><figure class=""><div class="cell"><video src="eh-reel-cape.mp4" poster="assets/img-079.webp" muted loop playsinline autoplay preload="metadata" aria-label="Reel: sequin cape detail"></video></div></figure></div></div><div class="blk"><div class="blk-h"><span>Campaign stills</span><span></span></div><div class="grid keep3" style="--n:3;--ar:2/3"><figure class=""><div class="cell"><img src="eh-lilac-portrait.jpg" width="1717" height="2576" loading="lazy" decoding="async" alt="Lilac look with a maang tikka, framed by a carved wooden arch" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="eh-black-cape.jpg" width="1717" height="2576" loading="lazy" decoding="async" alt="Black look with a silver embroidered cape, in profile at a studded wooden door" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-080.webp" width="860" height="1290" alt="White and gold look under a scalloped arch" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="eh-ivory-gown.jpg" width="1717" height="2576" loading="lazy" decoding="async" alt="Ivory and gold brocade look with rust sleeves under a scalloped arch" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="eh-mauve-cape.jpg" width="1717" height="2576" loading="lazy" decoding="async" alt="Mauve gown with a silver embroidered cape beside a courtyard fountain" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-081.webp" width="860" height="1290" alt="Black and gold look in profile" data-zoom tabindex="0"></div></figure></div></div></div>
+</div>
+<nav class="landing" aria-label="Floor 7 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f6"><span class="ic">←</span><span><span class="s">Floor 6</span>Organise with Kopal</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture" aria-current="true">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 7</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f8"><span><span class="s">Next, floor 8</span>Climate × SRHR</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f8" data-floor="8" aria-labelledby="f8-t">
+<div class="case">
+ <div class="info" style="--c:var(--cobalt);--fg:#fff">
+  <p class="c-meta">Floor 8. Master of Design, University of Auckland, 2025. Solo project.</p>
+  <h2 class="c-title long" id="f8-t">Climate × Sexual & Reproductive Health and Rights</h2>
+  <p class="c-hook">Climate money flows everywhere except to the women it affects most.</p>
+  
+  <div class="c-copy"><div><h3>The brief</h3><p>Design a framework showing how climate change threatens women's sexual and reproductive health, and how investors could respond. Framework proposed for Organon × Y-Labs.</p></div><div><h3>The idea</h3><p>Turn a policy framework into a visual argument. Scales show women carrying the heavier risk. A funnel shows climate funding trickling past them. A handshake shows what happens when investors work together.</p></div><div><h3>The craft</h3><p>Fifteen visuals moving from problem to evidence to strategy, ending in a theory of change that maps activities to outcomes and goals.</p></div><div><h3>Sources</h3><p>Data from WHO, IOM and UNFPA.</p></div></div>
+  
+  <div class="c-foot"><p class="stat">15 visuals<i>one framework</i></p></div>
+  <button class="peek p-right" type="button" aria-label="Mochi. Say hello."><img src="assets/img-082.webp" width="440" height="489" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>Key visual</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-083.webp" width="860" height="860" alt="A hand holding the female symbol above a burning Earth: life begins with women, don&#x27;t let climate change be their end" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>The problem</span><span></span></div><div class="grid " style="--n:2;--ar:1"><figure class=""><div class="cell"><img src="assets/img-084.webp" width="1100" height="1100" alt="Funnel of climate funds with only a few coins reaching women" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-085.webp" width="860" height="860" alt="Scale of risk" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-086.webp" width="860" height="860" alt="Climate change as the biggest health threat" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-087.webp" width="822" height="822" alt="By 2050, 80% of those displaced will be women and girls" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>The evidence</span><span></span></div><div class="grid " style="--n:2;--ar:1"><figure class=""><div class="cell"><img src="assets/img-088.webp" width="860" height="860" alt="Collage of news headlines" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-089.webp" width="860" height="860" alt="Chart of climate change against health risks" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>The framework</span><span></span></div><div class="grid " style="--n:2;--ar:1"><figure class=""><div class="cell"><img src="assets/img-090.webp" width="860" height="860" alt="Investment flow, where we are and where we want to be" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-091.webp" width="860" height="860" alt="Climate finance and gender integration" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-092.webp" width="860" height="860" alt="Building blocks of health systems" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-093.webp" width="860" height="860" alt="Developing a strategy, the five key steps" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Case example and close</span><span></span></div><div class="grid " style="--n:2;--ar:1"><figure class=""><div class="cell"><img src="assets/img-094.webp" width="860" height="860" alt="Case study: Women&#x27;s Health on Wheels, Philippines" data-zoom tabindex="0"></div></figure><figure class=""><div class="cell"><img src="assets/img-095.webp" width="860" height="860" alt="Handshake between women&#x27;s health rights and climate investors" data-zoom tabindex="0"></div></figure></div></div><div class="blk"><div class="blk-h"><span>Theory of change</span><span></span></div><div class="grid free " style="--n:1"><figure class=""><div class="cell"><img src="assets/img-096.webp" width="1400" height="700" alt="Theory of change from activities to outcomes and goals" data-zoom tabindex="0"></div></figure></div></div></div>
+</div>
+<nav class="landing" aria-label="Floor 8 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f7"><span class="ic">←</span><span><span class="s">Floor 7</span>EH Couture</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR" aria-current="true">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework">9</button><span class="here">You are on floor 8</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="f9"><span><span class="s">Next, floor 9</span>The SIGN framework</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+<section class="zone" id="f9" data-floor="9" aria-labelledby="f9-t">
+<div class="case">
+ <div class="info" style="--c:var(--amber)">
+  <p class="c-meta">Floor 9. Master of Design thesis, University of Auckland.</p>
+  <h2 class="c-title long" id="f9-t">Designing trust in cosmetic medical tourism</h2>
+  <p class="c-hook">Trust starts before a patient ever walks through the door.</p>
+  
+  <div class="c-copy"><div><h3>The question</h3><p>How digital touchpoints build or break trust, empathy and cultural sensitivity in the pre-visit patient experience of cosmetic medical tourism.</p></div><div><h3>The framework</h3><p>SIGN, for Sensitization, Involvement, Navigation and Guidance: a diagnostic tool for evaluating digital trust and cultural sensitivity before a first visit.</p></div><div><h3>The method</h3><p>I audited nine cosmetic clinics across South Korea, Turkey and Colombia against a custom evaluation matrix built from research and existing toolkits, using a custom Gemini Gem fed with my own criteria to speed up the analysis.</p></div><div><h3>What happened</h3><p>Three industry experts validated the methodology. I'm co-writing the thesis into a journal article with my supervisor, and developed it into a venture concept through the University's Innovation Hatchery.</p></div></div>
+  <p class="c-link"><a class="pill solid" href="https://hdl.handle.net/2292/74050" target="_blank" rel="noopener">Read the full thesis<span class="ic">↗</span></a></p>
+  <div class="c-foot"><p class="stat">First Class Honours<i>Distinguished Graduate Award 2026</i></p></div>
+  <button class="peek p-bottom big" type="button" aria-label="Bolt. Say hello."><img src="assets/img-017.webp" width="460" height="459" alt=""></button>
+ </div>
+ <div class="work"><div class="blk"><div class="blk-h"><span>The framework</span><span></span></div><div class="grid free narrow" style="--n:1"><figure class=""><div class="cell"><img src="assets/img-097.webp" width="1000" height="1415" alt="The SIGN framework: a pinwheel model centred on trust, with Sensitization, Involvement, Navigation and Guidance blades around Trust" data-zoom tabindex="0"></div><figcaption>A pinwheel model centred on trust.</figcaption></figure></div></div><div class="blk"><div class="blk-h"><span>The audit</span><span></span></div><div class="audit"><div><b>9</b><span>clinics audited</span></div><div><b>3</b><span>countries: South Korea, Turkey and Colombia</span></div><div><b>4</b><span>lenses: information architecture, communication, trust signals and customer journeys</span></div><div><b>3</b><span>industry experts validated the method</span></div></div></div></div>
+</div>
+<nav class="landing" aria-label="Floor 9 lift panel">
+ <div class="l-left"><button class="pill" type="button" data-go="floors"><span class="ic">↑</span>All floors</button><button class="pill" type="button" data-go="f8"><span class="ic">←</span><span><span class="s">Floor 8</span>Climate × SRHR</span></button></div>
+ <div class="minis"><button class="mini" type="button" data-go="f1" aria-label="Floor 1, White Rhino">1</button><button class="mini" type="button" data-go="f2" aria-label="Floor 2, Bro Seltzer">2</button><button class="mini" type="button" data-go="f3" aria-label="Floor 3, PNB One">3</button><button class="mini" type="button" data-go="f4" aria-label="Floor 4, Earth Center by BCG">4</button><button class="mini" type="button" data-go="f5" aria-label="Floor 5, The RAI report">5</button><button class="mini" type="button" data-go="f6" aria-label="Floor 6, Organise with Kopal">6</button><button class="mini" type="button" data-go="f7" aria-label="Floor 7, EH Couture">7</button><button class="mini" type="button" data-go="f8" aria-label="Floor 8, Climate × SRHR">8</button><button class="mini" type="button" data-go="f9" aria-label="Floor 9, The SIGN framework" aria-current="true">9</button><span class="here">You are on floor 9</span></div>
+ <div class="l-right"><button class="pill solid" type="button" data-go="contact"><span><span class="s">Top floor.</span>Say hello</span><span class="ic">→</span></button></div>
+</nav>
+</section>
+</main>
+
+<footer class="contact zone" id="contact" data-floor="9">
+  <p class="big">Let's make something<br><i>people actually feel.</i></p>
+  <div class="cta">
+    <a class="pill solid" href="mailto:nanakdeep.anand@gmail.com"><span class="ic">✉</span>Email me</a>
+    <a class="pill ghost" href="https://nanakanand.myportfolio.com/" target="_blank" rel="noopener">Service design deep dives<span class="ic">↗</span></a>
+  </div>
+  <p class="deep">Curious about the research and service design side of my work? The deep dives walk through journeys, blueprints and frameworks in full.</p>
+  <div class="row">
+    <div><h3>Find me</h3><p><a href="https://www.linkedin.com/in/nanakanand/" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a href="https://www.behance.net/NanakdeepSinghAnand" target="_blank" rel="noopener">Behance</a></p></div>
+    <div><h3>Email</h3><p><a href="mailto:nanakdeep.anand@gmail.com">nanakdeep.anand@gmail.com</a><br><a href="mailto:nanak.s.anand@gmail.com">nanak.s.anand@gmail.com</a></p></div>
+    <div><h3>Based in</h3><p>Christchurch, Aotearoa New Zealand</p></div>
+    <div><h3>Open to</h3><p>Design and creative roles, internships and collaborations</p></div>
+  </div>
+  <div class="small">
+    <p>© 2026 Nanak Anand. The monsters and lift video were made with AI tools and art-directed by me.</p>
+    <button type="button" data-go="g">Back to the top <span class="arw">↑</span></button>
+  </div>
+</footer>
+
+<dialog id="lb"><img id="lbImg" src="" alt=""></dialog>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vids=document.querySelectorAll('video:not(#heroVid)');
+  if(reduce){vids.forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
+  else{
+    var vio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.2});
+    vids.forEach(function(v){vio.observe(v)});
+  }
+
+  (function(){var hv=document.getElementById('heroVid'),hs=document.getElementById('heroStill'),h0=document.getElementById('heroStart');if(!hv||!hs||!h0)return;
+    var HOLD_AT=7.5,HOLD_MS=2000,FADE=0.6,vis=false,held=false,holdT=null,watching=false;hv.loop=true;
+    function showOpen(){h0.classList.add('off');hs.classList.remove('off')}
+    if(reduce){hv.removeAttribute('src');hv.load();showOpen();return}
+    function tryPlay(){var p=hv.play();if(p&&p.catch)p.catch(function(){showOpen()})}
+    function restart(){if(!vis)return;clearTimeout(holdT);holdT=null;held=false;hs.classList.add('off');try{hv.currentTime=0}catch(e){}tryPlay()}
+    function watch(){if(watching)return;watching=true;(function tick(){
+      if(held||hv.paused){watching=false;return}
+      if(hv.currentTime>=HOLD_AT){hv.pause();held=true;watching=false;
+        holdT=setTimeout(function(){holdT=null;hs.classList.add('off');tryPlay()},HOLD_MS);return}
+      requestAnimationFrame(tick)})()}
+    hv.addEventListener('playing',function(){h0.classList.add('off')});
+    hv.addEventListener('timeupdate',function(){var t=hv.currentTime;
+      if(t<HOLD_AT-FADE-0.5)held=false;
+      if(!held&&t>=HOLD_AT-FADE&&t<HOLD_AT){hs.classList.remove('off');watch()}});
+    new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;
+      if(vis){restart()}else{hv.pause();clearTimeout(holdT);holdT=null}})},{threshold:.35}).observe(hv);
+    document.addEventListener('visibilitychange',function(){if(document.hidden){hv.pause();clearTimeout(holdT);holdT=null}else if(vis){restart()}});
+    addEventListener('pageshow',function(e){if(e.persisted&&vis)restart()});
+  })();
+
+  (function(){
+    function hits(p,texts){var b=p.querySelector('img').getBoundingClientRect(),ix=b.width*.1,iy=b.height*.06;
+      var r={left:b.left+ix,right:b.right-ix,top:b.top+iy,bottom:b.bottom};
+      for(var i=0;i<texts.length;i++){var rg=document.createRange();rg.selectNodeContents(texts[i]);var rs=rg.getClientRects();
+        if(texts[i].tagName==='A'){rs=[texts[i].getBoundingClientRect()]}
+        for(var j=0;j<rs.length;j++){var t=rs[j];if(!t.width)continue;
+          if(Math.min(t.right,r.right)-Math.max(t.left,r.left)>4&&Math.min(t.bottom,r.bottom)-Math.max(t.top,r.top)>4)return true}}return false}
+    function fit(){document.querySelectorAll('.info .peek').forEach(function(p){
+      p.style.width='';var base=parseFloat(getComputedStyle(p).width);if(!base)return;var max=base*(p.classList.contains('p-bottom')?1.3:1);
+      var inf=p.closest('.info');var texts=[].slice.call(inf.querySelectorAll('h1,h2,h3,p,li,dt,dd,.stat,.kick,a'));
+      texts=texts.filter(function(t){return !p.contains(t)});
+      var w=max,min=base*0.72;p.style.width=w+'px';
+      while(hits(p,texts)&&w>min){w=Math.max(min,w-base*0.04);p.style.width=w+'px'}})}
+    var t;function later(){clearTimeout(t);t=setTimeout(fit,120)}
+    addEventListener('resize',later);addEventListener('load',fit);
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+    document.querySelectorAll('.info .peek img').forEach(function(i){if(!i.complete)i.addEventListener('load',later)});
+    fit();
+  })();
+  var doors=document.getElementById('doors'),sign=document.getElementById('doorSign');
+  var led=document.getElementById('ledNum'),arrow=document.getElementById('arrow');
+  var order=['G','1','2','3','4','5','6','7','8','9'],current='G',busy=false,jumping=false;
+  var navLinks=document.querySelectorAll('.links a');
+  function setFloor(f){if(f===current)return;var up=order.indexOf(f)>order.indexOf(current);
+    arrow.classList.toggle('down',!up);arrow.classList.add('on');current=f;led.textContent=f;
+    var rl=document.getElementById('rail');if(rl){rl.classList.toggle('on',f!=='G');rl.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-current',x.textContent.trim()===f?'true':'false')})}
+    setTimeout(function(){arrow.classList.remove('on')},900)}
+  function jump(el){var navH=document.querySelector('.nav').offsetHeight;window.scrollTo({top:el.id==='g'?0:el.getBoundingClientRect().top+scrollY-navH,behavior:'auto'})}
+  var pending=null;
+  function go(id){var el=document.getElementById(id);if(!el)return;
+    if(busy){pending=id;return}
+    var f=el.getAttribute('data-floor')||'G';
+    if(reduce){jump(el);setFloor(f);return}
+    jumping=true;busy=true;sign.textContent=f;doors.classList.add('shut');
+    setTimeout(function(){jump(el);setFloor(f);
+      setTimeout(function(){doors.classList.remove('shut');setTimeout(function(){busy=false;jumping=false;if(pending){var p=pending;pending=null;go(p)}},450)},260)},430)}
+  document.addEventListener('click',function(e){var t=e.target.closest('[data-go]');if(!t)return;e.preventDefault();go(t.getAttribute('data-go'))});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting||jumping)return;
+    setFloor(e.target.getAttribute('data-floor'));
+    var id=e.target.id;navLinks.forEach(function(a){var g=a.getAttribute('data-go');
+      var on=(g==='about'&&id==='about')||(g==='floors'&&(id==='floors'||/^f\d/.test(id)))||(g==='contact'&&id==='contact');a.setAttribute('aria-current',on?'true':'false')})})},{rootMargin:'-45% 0px -45% 0px'});
+  document.querySelectorAll('.zone').forEach(function(z){io.observe(z)});
+  function fitInfo(){var nh=document.querySelector('.nav').offsetHeight;document.querySelectorAll('.info').forEach(function(el){if(getComputedStyle(el).position!=='sticky'){el.style.top='';return}var d=innerHeight-nh-el.offsetHeight;el.style.top=(nh+Math.min(0,d))+'px'})}
+  var navEl=document.querySelector('.nav'),heroEl=document.getElementById('g');
+  function navLift(){var r=heroEl.getBoundingClientRect();navEl.classList.toggle('lift',r.bottom>navEl.offsetHeight+4)}
+  addEventListener('scroll',navLift,{passive:true});document.addEventListener('scroll',navLift,{passive:true,capture:true});
+  addEventListener('resize',navLift);addEventListener('load',navLift);addEventListener('pageshow',navLift);
+  if('IntersectionObserver' in window){new IntersectionObserver(navLift,{threshold:[0,.02,.05,.1,.2,.3,.4,.5,.6,.7,.8,.9,1]}).observe(heroEl)}
+  navLift();
+  addEventListener('resize',fitInfo);addEventListener('load',fitInfo);fitInfo();
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+  document.addEventListener('click',function(e){var z=e.target.closest('[data-zoom]');if(!z)return;
+    var img=z.tagName==='IMG'?z:z.querySelector('img');lbImg.src=img.src;lbImg.alt=img.alt;lb.showModal()});
+  document.addEventListener('keydown',function(e){var z=e.target.closest&&e.target.closest('[data-zoom]');if(z&&(e.key==='Enter'||e.key===' ')&&z.tagName==='IMG'){e.preventDefault();z.click()}});
+  lb.addEventListener('click',function(){lb.close()});
+  document.querySelectorAll('.monster').forEach(function(mb){
+    mb.addEventListener('click',function(){mb.classList.remove('hop');void mb.offsetWidth;mb.classList.add('hop')});
+    mb.addEventListener('animationend',function(e){if(e.animationName==='hop')mb.classList.remove('hop')});
+  });
+})();
+</script>
+</body>
+</html>
